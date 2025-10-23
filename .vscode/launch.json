@@ -52,6 +52,11 @@
     {
       "name": "Build then Debug (dist)",
       "configurations": ["Debug: compiled dist/index.js"]
+    },
+    {
+      "name": "Build → Run dist",
+      "configurations": ["Build & Run dist (compiled)"],
+      "preLaunchTask": "tsc: build - tsconfig.json"
     }
   ]
 }

@@ -1,20 +1,47 @@
 {
-  "name": "Run: src/index.ts (ts-node)",
-  "type": "node",
-  "request": "launch",
-  "runtimeArgs": ["-r", "ts-node/register"],
-  "program": "${workspaceFolder}/src/index.ts",
-  "cwd": "${workspaceFolder}",
-  "skipFiles": ["<node_internals>/**"],
-  "env": { "NODE_ENV": "development", "TS_NODE_TRANSPILE_ONLY": "true" }
-},
-{
-  "name": "Debug: current TS file (ts-node)",
-  "type": "node",
-  "request": "launch",
-  "runtimeArgs": ["-r", "ts-node/register"],
-  "program": "${file}",
-  "cwd": "${workspaceFolder}",
-  "skipFiles": ["<node_internals>/**"],
-  "env": { "TS_NODE_TRANSPILE_ONLY": "true" }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run: src/index.ts (ts-node)",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": ["-r", "${workspaceFolder}/node_modules/ts-node/register"],
+      "program": "${workspaceFolder}/src/index.ts",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": { "NODE_ENV": "development", "TS_NODE_TRANSPILE_ONLY": "true" }
+    },
+    {
+      "name": "Debug: current TS file (ts-node)",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": ["-r", "${workspaceFolder}/node_modules/ts-node/register"],
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": { "TS_NODE_TRANSPILE_ONLY": "true" }
+    },
+    {
+      "name": "Debug: compiled dist/index.js",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": { "NODE_ENV": "production" }
+    },
+    {
+      "name": "Attach: Pick Node Process",
+      "type": "node",
+      "request": "attach",
+      "processId": "${command:PickProcess}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Build then Debug (dist)",
+      "configurations": ["Debug: compiled dist/index.js"]
+    }
+  ]
 }

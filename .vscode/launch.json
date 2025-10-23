@@ -6,10 +6,7 @@
   "program": "${workspaceFolder}/src/index.ts",
   "cwd": "${workspaceFolder}",
   "skipFiles": ["<node_internals>/**"],
-  "env": {
-    "NODE_ENV": "development",
-    "TS_NODE_TRANSPILE_ONLY": "true"
-  }
+  "env": { "NODE_ENV": "development", "TS_NODE_TRANSPILE_ONLY": "true" }
 },
 {
   "name": "Debug: current TS file (ts-node)",

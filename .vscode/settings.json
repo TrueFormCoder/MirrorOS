@@ -1,0 +1,50 @@
+{
+  // —— Core editor feel ——
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 750,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 100],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // —— Default formatter: Prettier ——
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // Disable built-in JS/TS formatter so Prettier is authoritative
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+
+  // —— Prettier conventions (safe defaults for TS/Node/Workers) ——
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 100,
+  "prettier.arrowParens": "always",
+
+  // —— ESLint: fix what Prettier won’t ——
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // —— Inline AI & chat (for Codex-style flows) ——
+  "editor.inlineSuggest.enabled": true,
+  "chat.editor.selectionInlineChat": "on",         // keeps a small chat inline with your code
+  "chat.showChatPromptActions": true,              // surfaces quick actions like “Explain” / “Refactor”
+
+  // —— Terminal / Git ——
+  "git.autofetch": true,
+  "terminal.integrated.inheritEnv": true,
+
+  // —— Privacy / security ——
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.enabled": true
+}

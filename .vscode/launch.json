@@ -32,6 +32,16 @@
       "env": { "NODE_ENV": "production" }
     },
     {
+      "name": "Build & Run dist (compiled)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": { "NODE_ENV": "production" }
+    },
+    {
       "name": "Attach: Pick Node Process",
       "type": "node",
       "request": "attach",

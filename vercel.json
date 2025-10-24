@@ -2,5 +2,12 @@
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": "web-dist"
+  "outputDirectory": "web-dist",
+  "redirects": [
+    {
+      "source": "/go/mirroros-widget",
+      "destination": "https://github.com/TrueFormCoder/mirroros-countdown-widget",
+      "permanent": true
+    }
+  ]
 }

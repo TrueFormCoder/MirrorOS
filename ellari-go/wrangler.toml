@@ -1,0 +1,7 @@
+name = "ellari-go"
+main = "src/index.ts"
+compatibility_date = "2025-10-24"
+
+routes = [
+  { pattern = "ellari.ai/go/*", zone_name = "ellari.ai" }
+]
